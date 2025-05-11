@@ -8,8 +8,8 @@ pipeline {
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
         SONAR_TOKEN = credentials('sonar-token')
-        SONAR_ORGANIZATION = 'jenkins-project-123'
-        SONAR_PROJECT_KEY = 'jenkins-project-123_ci-jenkins'
+        SONAR_ORGANIZATION = 'jenkinsp123'
+        SONAR_PROJECT_KEY = 'muhammad21236_CRUD-DevOps-CICD'
     }
 
     stages {

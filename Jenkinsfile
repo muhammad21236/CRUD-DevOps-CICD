@@ -18,8 +18,8 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarCloud') {
                     sh '''$SCANNER_HOME/bin/sonar-scanner \
-  -Dsonar.organization=jenkins-project-123 \
-  -Dsonar.projectKey=jenkins-project-123_ci-jenkins \
+  -Dsonar.organization=jenkinsp123 \
+  -Dsonar.projectKey=muhammad21236_CRUD-DevOps-CICD \
   -Dsonar.sources=. \
   -Dsonar.host.url=https://sonarcloud.io '''
                 }
@@ -33,7 +33,7 @@ pipeline {
                 script {
                     docker.withRegistry('', 'docker-cred') {
                         def buildNumber = env.BUILD_NUMBER ?: '1'
-                        def image = docker.build("pekker123/crud-123:latest")
+                        def image = docker.build("m0dd/crud-123:latest")
                         image.push()
                     }
                 }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                         sh 'docker rm -f $(docker ps -q) || true'
-                        sh 'docker run -d -p 3000:3000 pekker123/crud-123:latest'
+                        sh 'docker run -d -p 3000:3000 m0dd/crud-123:latest'
                         
                     
                 }
